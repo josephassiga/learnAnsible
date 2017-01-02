@@ -1,0 +1,4 @@
+- hosts: server1
+  tasks:
+  - name: Install Lynx on Server One
+    yum: pkg=httpd state=latest update_cache=true
