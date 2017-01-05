@@ -1,0 +1,7 @@
+- hosts: server1
+  vars:
+   control_server: localhost
+   web_root: /var/www/
+  tasks:
+  - name: Install Lynx on Server One
+    yum: pkg=httpd state=latest update_cache=true

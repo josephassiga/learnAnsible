@@ -1,0 +1,14 @@
+- hosts: server1
+  user: ec2-user
+  become: sudo
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars:
+    playbook_version: 0.1b
+  vars_files:
+   -  conf/copyrigth.yml
+   -  conf/webdefaults.yml
+  vars_prompt:
+   - name: web_domain
+     prompt: Web Domain
