@@ -1,6 +1,6 @@
 - hosts: server1
   user: ec2-user
-  become: sudo
+  become: yes
   become_method: sudo
   connection: ssh
   gather_facts: yes
@@ -12,3 +12,8 @@
   vars_prompt:
    - name: web_domain
      prompt: Web Domain
+  tasks:
+   - name: Install Lynx web browser
+     yum: pkg=lynx state=installed
+   - name: Check for telnet Client
+     yum: pkg=telnet state=absent
